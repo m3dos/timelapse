@@ -24,7 +24,7 @@ if not os.path.exists(save_path):
 last_saved = datetime.datetime.now()
 disabled = False
 
-print("Beginning Capture...")
+print(f"Beginning Capture Every {interval} Seconds...")
 try:
     while True:
         ret, frame = cap.read()
@@ -57,7 +57,7 @@ try:
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     
-        time.sleep(0.01)
+        time.sleep(0.018)
 
 except KeyboardInterrupt:
     print("Time lapse capture stopped.")
